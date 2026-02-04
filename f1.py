@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
-from streamlit_option_menu import option_menu
+try:
+    from streamlit_option_menu import option_menu
+except ImportError:
+    st.error("The 'streamlit-option-menu' library failed to install. Please check requirements.txt.")
 
 # --- THEME & CSS ---
 st.set_page_config(page_title="F1 Velocity Hub", layout="wide")
